@@ -38,13 +38,13 @@ elif random_num == 2:
 else:
     computer = "sr"
 
-print("Your turn : stone(s), paper(p), scissor(sr)")
 
-user = input().lower()
+user = input("Your turn : stone(s), paper(p), scissor(sr): ").lower()
 
 result = the_game(computer, user)
 
-
+# here we are doing this thing by using if elif lader
+# for computer
 if computer == "s":
     real = "stone"
     print(f"compuer choose : {real}")
@@ -55,7 +55,17 @@ else :
     real = "scissor"
     print(f"compuer choose : {real}")
 
-print(f"you choose : {user}")
+# here we use dictionary to do that same thing but in structured way instead of large if elif
+# for user
+the_dict = {
+    "s" : "stone",
+    "p" : "paper",
+    "sr" : "scissor"
+}
+
+the_real = the_dict.get(user)
+print(f"You choose : {the_real}")
+
 
 if result is None:
     print("Draw")
